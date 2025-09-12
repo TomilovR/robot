@@ -1,0 +1,54 @@
+Starting >>> TomilovR
+Starting >>> examples_rclcpp_async_client
+Starting >>> examples_rclcpp_cbg_executor
+Starting >>> examples_rclcpp_minimal_action_client
+Starting >>> examples_rclcpp_minimal_action_server
+Starting >>> examples_rclcpp_minimal_client
+Starting >>> examples_rclcpp_minimal_composition
+Starting >>> examples_rclcpp_minimal_publisher
+Starting >>> examples_rclcpp_minimal_service
+Starting >>> examples_rclcpp_minimal_subscriber
+Starting >>> examples_rclcpp_minimal_timer
+Starting >>> examples_rclcpp_multithreaded_executor
+Starting >>> examples_rclcpp_wait_set
+Starting >>> examples_rclpy_executors
+Starting >>> examples_rclpy_guard_conditions
+Starting >>> examples_rclpy_minimal_action_client
+/home/roman/.local/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'rclcpp_minimal_action_client - 0.1s] ...
+  warnings.warn(msg)
+Finished <<< examples_rclcpp_minimal_action_client [0.89s]                                                                                                                          
+Finished <<< examples_rclcpp_minimal_client [0.89s]                                                                                                  
+Finished <<< examples_rclcpp_minimal_action_server [0.90s]
+Finished <<< examples_rclcpp_cbg_executor [0.91s]
+Finished <<< examples_rclcpp_minimal_composition [0.90s]
+Finished <<< examples_rclcpp_async_client [0.93s]
+Finished <<< examples_rclcpp_minimal_publisher [0.91s]
+Finished <<< examples_rclcpp_minimal_service [0.92s]
+Finished <<< examples_rclcpp_multithreaded_executor [0.92s]
+Finished <<< examples_rclcpp_minimal_subscriber [0.93s]
+Finished <<< examples_rclcpp_minimal_timer [0.93s]
+Finished <<< examples_rclcpp_wait_set [0.94s]
+Starting >>> examples_rclpy_minimal_action_server
+Starting >>> examples_rclpy_minimal_client
+Starting >>> examples_rclpy_minimal_publisher
+Starting >>> examples_rclpy_minimal_service
+Starting >>> examples_rclpy_minimal_subscriber
+Starting >>> examples_rclpy_pointcloud_publisher
+Starting >>> launch_testing_examples
+--- stderr: TomilovR                                                                                                                                                               
+/home/roman/.local/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+  warnings.warn(msg)
+---
+Finished <<< TomilovR [2.70s]
+Finished <<< examples_rclpy_guard_conditions [2.65s]                                                                                                             
+Finished <<< examples_rclpy_executors [2.93s]                                                                                                                        
+Finished <<< launch_testing_examples [2.11s]                                                                                                                              
+Finished <<< examples_rclpy_minimal_action_client [3.05s]                                                                                                                 
+Finished <<< examples_rclpy_minimal_publisher [2.14s]
+Finished <<< examples_rclpy_minimal_action_server [2.15s]
+Finished <<< examples_rclpy_minimal_subscriber [2.25s]                                                                                                           
+Finished <<< examples_rclpy_minimal_service [2.31s]
+Finished <<< examples_rclpy_pointcloud_publisher [2.31s]
+Finished <<< examples_rclpy_minimal_client [2.49s]            
+
+Summary: 23 packages finished [3.61s]
