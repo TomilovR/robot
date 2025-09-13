@@ -1,0 +1,9 @@
+message,severity,node,stamp,location
+"Oh no! I hit the wall! (Clamping from [x=11,120889, y=5,544445])",30,turtlesim1.sim,1757765951.246218848,./src/turtle.cpp:update:288
+"Oh no! I hit the wall! (Clamping from [x=11,112445, y=5,544445])",30,turtlesim1.sim,1757765951.230881680,./src/turtle.cpp:update:288
+"Spawning turtle [turtle1] at x=[5,544445], y=[5,544445], theta=[0,000000]",20,turtlesim3.sim,1757765925.347557655,./src/turtle_frame.cpp:spawnTurtle:248
+Starting turtlesim with node name /turtlesim3/sim,20,turtlesim3.sim,1757765925.344376923,./src/turtle_frame.cpp:TurtleFrame:147
+"Spawning turtle [turtle1] at x=[5,544445], y=[5,544445], theta=[0,000000]",20,turtlesim1.sim,1757765925.349809596,./src/turtle_frame.cpp:spawnTurtle:248
+"Spawning turtle [turtle1] at x=[5,544445], y=[5,544445], theta=[0,000000]",20,turtlesim2.sim,1757765925.348562593,./src/turtle_frame.cpp:spawnTurtle:248
+Starting turtlesim with node name /turtlesim1/sim,20,turtlesim1.sim,1757765925.346127918,./src/turtle_frame.cpp:TurtleFrame:147
+Starting turtlesim with node name /turtlesim2/sim,20,turtlesim2.sim,1757765925.345293439,./src/turtle_frame.cpp:TurtleFrame:147
