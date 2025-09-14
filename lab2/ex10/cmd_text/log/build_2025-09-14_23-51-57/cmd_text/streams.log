@@ -1,0 +1,36 @@
+[0.565s] Invoking command in '/home/roman/ros2_ws/src/cmd_text': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/roman/ros2_ws/src/cmd_text/build/cmd_text/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/cmd_text build --build-base /home/roman/ros2_ws/src/cmd_text/build/cmd_text/build install --record /home/roman/ros2_ws/src/cmd_text/build/cmd_text/install.log --single-version-externally-managed install_data
+[0.695s] /home/roman/.local/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[0.695s]   warnings.warn(msg)
+[0.786s] running egg_info
+[0.801s] creating build/cmd_text/cmd_text.egg-info
+[0.801s] writing build/cmd_text/cmd_text.egg-info/PKG-INFO
+[0.802s] writing dependency_links to build/cmd_text/cmd_text.egg-info/dependency_links.txt
+[0.802s] writing entry points to build/cmd_text/cmd_text.egg-info/entry_points.txt
+[0.802s] writing requirements to build/cmd_text/cmd_text.egg-info/requires.txt
+[0.802s] writing top-level names to build/cmd_text/cmd_text.egg-info/top_level.txt
+[0.802s] writing manifest file 'build/cmd_text/cmd_text.egg-info/SOURCES.txt'
+[0.834s] reading manifest file 'build/cmd_text/cmd_text.egg-info/SOURCES.txt'
+[0.834s] adding license file 'LICENSE'
+[0.834s] writing manifest file 'build/cmd_text/cmd_text.egg-info/SOURCES.txt'
+[0.834s] running build
+[0.834s] running build_py
+[0.834s] creating /home/roman/ros2_ws/src/cmd_text/build/cmd_text/build/lib/cmd_text
+[0.835s] copying cmd_text/text_to_cmd_vel.py -> /home/roman/ros2_ws/src/cmd_text/build/cmd_text/build/lib/cmd_text
+[0.835s] copying cmd_text/__init__.py -> /home/roman/ros2_ws/src/cmd_text/build/cmd_text/build/lib/cmd_text
+[0.835s] running install
+[0.838s] running install_lib
+[0.853s] creating /home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/python3.12/site-packages/cmd_text
+[0.853s] copying /home/roman/ros2_ws/src/cmd_text/build/cmd_text/build/lib/cmd_text/text_to_cmd_vel.py -> /home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/python3.12/site-packages/cmd_text
+[0.853s] copying /home/roman/ros2_ws/src/cmd_text/build/cmd_text/build/lib/cmd_text/__init__.py -> /home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/python3.12/site-packages/cmd_text
+[0.854s] byte-compiling /home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/python3.12/site-packages/cmd_text/text_to_cmd_vel.py to text_to_cmd_vel.cpython-312.pyc
+[0.854s] byte-compiling /home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/python3.12/site-packages/cmd_text/__init__.py to __init__.cpython-312.pyc
+[0.854s] running install_data
+[0.854s] creating /home/roman/ros2_ws/src/cmd_text/install/cmd_text/share/ament_index/resource_index/packages
+[0.854s] copying resource/cmd_text -> /home/roman/ros2_ws/src/cmd_text/install/cmd_text/share/ament_index/resource_index/packages
+[0.855s] copying package.xml -> /home/roman/ros2_ws/src/cmd_text/install/cmd_text/share/cmd_text
+[0.855s] running install_egg_info
+[0.870s] Copying build/cmd_text/cmd_text.egg-info to /home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/python3.12/site-packages/cmd_text-0.0.0-py3.12.egg-info
+[0.871s] running install_scripts
+[0.955s] Installing listener script to /home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/cmd_text
+[0.955s] writing list of installed files to '/home/roman/ros2_ws/src/cmd_text/build/cmd_text/install.log'
+[0.974s] Invoked command in '/home/roman/ros2_ws/src/cmd_text' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/roman/ros2_ws/src/cmd_text/build/cmd_text/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/roman/ros2_ws/src/cmd_text/install/cmd_text/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/cmd_text build --build-base /home/roman/ros2_ws/src/cmd_text/build/cmd_text/build install --record /home/roman/ros2_ws/src/cmd_text/build/cmd_text/install.log --single-version-externally-managed install_data

@@ -1,0 +1,2 @@
+[console_scripts]
+listener = text_to_cmd.text_to_cmd_vel:main
