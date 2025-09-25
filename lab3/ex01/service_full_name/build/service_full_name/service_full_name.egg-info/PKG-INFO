@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: service_full_name
+Version: 0.0.0
+Summary: Python client server tutorial
+Maintainer: roman
+Maintainer-email: thfjfjfjdjfh@gmail.com
+License: Apache-2.0
+License-File: LICENSE
+Requires-Dist: setuptools
+Dynamic: license
+Dynamic: license-file
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: requires-dist
+Dynamic: summary

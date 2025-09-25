@@ -1,0 +1,40 @@
+[0.569s] Invoking command in '/home/roman/ros2_ws/src/service_full_name': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/roman/ros2_ws/src/service_full_name/build/service_full_name/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/service_full_name build --build-base /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build install --record /home/roman/ros2_ws/src/service_full_name/build/service_full_name/install.log --single-version-externally-managed install_data
+[0.700s] /home/roman/.local/lib/python3.12/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[0.701s]   warnings.warn(msg)
+[0.792s] running egg_info
+[0.808s] creating build/service_full_name/service_full_name.egg-info
+[0.808s] writing build/service_full_name/service_full_name.egg-info/PKG-INFO
+[0.808s] writing dependency_links to build/service_full_name/service_full_name.egg-info/dependency_links.txt
+[0.808s] writing entry points to build/service_full_name/service_full_name.egg-info/entry_points.txt
+[0.808s] writing requirements to build/service_full_name/service_full_name.egg-info/requires.txt
+[0.808s] writing top-level names to build/service_full_name/service_full_name.egg-info/top_level.txt
+[0.808s] writing manifest file 'build/service_full_name/service_full_name.egg-info/SOURCES.txt'
+[0.840s] reading manifest file 'build/service_full_name/service_full_name.egg-info/SOURCES.txt'
+[0.840s] adding license file 'LICENSE'
+[0.840s] writing manifest file 'build/service_full_name/service_full_name.egg-info/SOURCES.txt'
+[0.840s] running build
+[0.840s] running build_py
+[0.840s] creating /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build/lib/service_full_name
+[0.840s] copying service_full_name/client_name.py -> /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build/lib/service_full_name
+[0.841s] copying service_full_name/__init__.py -> /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build/lib/service_full_name
+[0.841s] copying service_full_name/service_name.py -> /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build/lib/service_full_name
+[0.841s] running install
+[0.844s] running install_lib
+[0.860s] creating /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages/service_full_name
+[0.860s] copying /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build/lib/service_full_name/client_name.py -> /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages/service_full_name
+[0.860s] copying /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build/lib/service_full_name/__init__.py -> /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages/service_full_name
+[0.860s] copying /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build/lib/service_full_name/service_name.py -> /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages/service_full_name
+[0.860s] byte-compiling /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages/service_full_name/client_name.py to client_name.cpython-312.pyc
+[0.861s] byte-compiling /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages/service_full_name/__init__.py to __init__.cpython-312.pyc
+[0.861s] byte-compiling /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages/service_full_name/service_name.py to service_name.cpython-312.pyc
+[0.861s] running install_data
+[0.861s] creating /home/roman/ros2_ws/src/service_full_name/install/service_full_name/share/ament_index/resource_index/packages
+[0.861s] copying resource/service_full_name -> /home/roman/ros2_ws/src/service_full_name/install/service_full_name/share/ament_index/resource_index/packages
+[0.861s] copying package.xml -> /home/roman/ros2_ws/src/service_full_name/install/service_full_name/share/service_full_name
+[0.861s] running install_egg_info
+[0.877s] Copying build/service_full_name/service_full_name.egg-info to /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages/service_full_name-0.0.0-py3.12.egg-info
+[0.877s] running install_scripts
+[0.964s] Installing client_name script to /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/service_full_name
+[0.964s] Installing service_name script to /home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/service_full_name
+[0.964s] writing list of installed files to '/home/roman/ros2_ws/src/service_full_name/build/service_full_name/install.log'
+[0.982s] Invoked command in '/home/roman/ros2_ws/src/service_full_name' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/roman/ros2_ws/src/service_full_name/build/service_full_name/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/roman/ros2_ws/src/service_full_name/install/service_full_name/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/service_full_name build --build-base /home/roman/ros2_ws/src/service_full_name/build/service_full_name/build install --record /home/roman/ros2_ws/src/service_full_name/build/service_full_name/install.log --single-version-externally-managed install_data
