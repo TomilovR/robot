@@ -1,0 +1,7 @@
+colcon build --packages-select turtle_tf_follow
+source install/setup.bash
+ros2 launch turtle_tf_follow turtle_multi_target.launch.py switch_threshold:=1.5
+
+ros2 run turtle_tf_follow keyboard_switcher
+
+ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=/turtle1/cmd_vel
