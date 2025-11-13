@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="zhiguli">
+
+  <!-- Константы -->
+  <xacro:property name="base_length" value="1.6"/>
+  <xacro:property name="base_width" value="0.7"/>
+  <xacro:property name="base_height" value="0.2"/>
+  <xacro:property name="base_mass" value="80.0"/>
+  <xacro:property name="base_ixx" value="10.0"/>
+  <xacro:property name="base_iyy" value="40.0"/>
+  <xacro:property name="base_izz" value="45.0"/>
+
+  <xacro:property name="wheel_radius" value="0.18"/>
+  <xacro:property name="wheel_length" value="0.12"/>
+  <xacro:property name="wheel_mass" value="3.0"/>
+  <xacro:property name="wheel_inertia" value="0.08"/>
+
+  <xacro:property name="hood_size" value="0.5 0.65 0.25"/>
+  <xacro:property name="hood_mass" value="15.0"/>
+  <xacro:property name="hood_ixx" value="1.0"/>
+  <xacro:property name="hood_iyy" value="2.0"/>
+  <xacro:property name="hood_izz" value="2.5"/>
+
+  <xacro:property name="cabin_size" value="0.7 0.65 0.5"/>
+  <xacro:property name="cabin_mass" value="20.0"/>
+  <xacro:property name="cabin_ixx" value="2.0"/>
+  <xacro:property name="cabin_iyy" value="3.0"/>
+  <xacro:property name="cabin_izz" value="4.0"/>
+
+  <xacro:property name="roof_size" value="0.65 0.6 0.05"/>
+  <xacro:property name="roof_mass" value="8.0"/>
+  <xacro:property name="roof_ixx" value="0.5"/>
+  <xacro:property name="roof_iyy" value="1.0"/>
+  <xacro:property name="roof_izz" value="1.2"/>
+
+  <xacro:property name="trunk_size" value="0.4 0.65 0.3"/>
+  <xacro:property name="trunk_mass" value="12.0"/>
+  <xacro:property name="trunk_ixx" value="1.0"/>
+  <xacro:property name="trunk_iyy" value="1.5"/>
+  <xacro:property name="trunk_izz" value="2.0"/>
+
+  <xacro:property name="bumper_size" value="0.1 0.7 0.12"/>
+  <xacro:property name="bumper_mass" value="3.0"/>
+  <xacro:property name="bumper_ixx" value="0.1"/>
+  <xacro:property name="bumper_iyy" value="0.2"/>
+  <xacro:property name="bumper_izz" value="0.2"/>
+
+  <xacro:property name="headlight_length" value="0.05"/>
+  <xacro:property name="headlight_radius" value="0.06"/>
+  <xacro:property name="headlight_mass" value="0.5"/>
+  <xacro:property name="headlight_inertia" value="0.01"/>
+
+  <xacro:property name="taillight_size" value="0.03 0.1 0.08"/>
+  <xacro:property name="taillight_mass" value="0.3"/>
+  <xacro:property name="taillight_inertia" value="0.01"/>
+
+  <!-- Макросы -->
+  <xacro:macro name="box_link" params="name size mass ixx iyy izz color">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <box size="${size}"/>
+        </geometry>
+        <material name="${color}">
+          <color rgba="${color}"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${size}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${mass}"/>
+        <inertia ixx="${ixx}" ixy="0" ixz="0" iyy="${iyy}" iyz="0" izz="${izz}"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="cylinder_link" params="name length radius mass inertia color rpy">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <cylinder length="${length}" radius="${radius}"/>
+        </geometry>
+        <origin rpy="${rpy}" xyz="0 0 0"/>
+        <material name="${color}">
+          <color rgba="${color}"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder length="${length}" radius="${radius}"/>
+        </geometry>
+        <origin rpy="${rpy}" xyz="0 0 0"/>
+      </collision>
+      <inertial>
+        <mass value="${mass}"/>
+        <inertia ixx="${inertia}" ixy="0" ixz="0" iyy="${inertia}" iyz="0" izz="${inertia}"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="wheel_joint" params="name parent child xyz">
+    <joint name="${name}" type="continuous">
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <origin xyz="${xyz}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="fixed_joint" params="name parent child xyz rpy">
+    <joint name="${name}" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- Base Link -->
+  <xacro:box_link name="base_link"
+                  size="${base_length} ${base_width} ${base_height}"
+                  mass="${base_mass}"
+                  ixx="${base_ixx}" iyy="${base_iyy}" izz="${base_izz}"
+                  color="0.8 0.1 0.1 1"/>
+
+  <!-- Hood -->
+  <xacro:box_link name="hood"
+                  size="${hood_size}"
+                  mass="${hood_mass}"
+                  ixx="${hood_ixx}" iyy="${hood_iyy}" izz="${hood_izz}"
+                  color="0.8 0.1 0.1 1"/>
+  <xacro:fixed_joint name="hood_joint" parent="base_link" child="hood" xyz="0.6 0 0.22" rpy="0 -0.1 0"/>
+
+  <!-- Cabin -->
+  <xacro:box_link name="cabin"
+                  size="${cabin_size}"
+                  mass="${cabin_mass}"
+                  ixx="${cabin_ixx}" iyy="${cabin_iyy}" izz="${cabin_izz}"
+                  color="0.7 0.8 0.9 0.6"/>
+  <xacro:fixed_joint name="cabin_joint" parent="base_link" child="cabin" xyz="0.1 0 0.45" rpy="0 0 0"/>
+
+  <!-- Roof -->
+  <xacro:box_link name="roof"
+                  size="${roof_size}"
+                  mass="${roof_mass}"
+                  ixx="${roof_ixx}" iyy="${roof_iyy}" izz="${roof_izz}"
+                  color="0.8 0.1 0.1 1"/>
+  <xacro:fixed_joint name="roof_joint" parent="cabin" child="roof" xyz="0 0 0.27" rpy="0 0 0"/>
+
+  <!-- Trunk -->
+  <xacro:box_link name="trunk"
+                  size="${trunk_size}"
+                  mass="${trunk_mass}"
+                  ixx="${trunk_ixx}" iyy="${trunk_iyy}" izz="${trunk_izz}"
+                  color="0.8 0.1 0.1 1"/>
+  <xacro:fixed_joint name="trunk_joint" parent="base_link" child="trunk" xyz="-0.6 0 0.25" rpy="0 0.05 0"/>
+
+  <!-- Front Bumper -->
+  <xacro:box_link name="front_bumper"
+                  size="${bumper_size}"
+                  mass="${bumper_mass}"
+                  ixx="${bumper_ixx}" iyy="${bumper_iyy}" izz="${bumper_izz}"
+                  color="0.8 0.8 0.8 1"/>
+  <xacro:fixed_joint name="front_bumper_joint" parent="base_link" child="front_bumper" xyz="0.85 0 0.0" rpy="0 0 0"/>
+
+  <!-- Rear Bumper -->
+  <xacro:box_link name="rear_bumper"
+                  size="${bumper_size}"
+                  mass="${bumper_mass}"
+                  ixx="${bumper_ixx}" iyy="${bumper_iyy}" izz="${bumper_izz}"
+                  color="0.8 0.8 0.8 1"/>
+  <xacro:fixed_joint name="rear_bumper_joint" parent="base_link" child="rear_bumper" xyz="-0.85 0 0.0" rpy="0 0 0"/>
+
+  <!-- Wheels -->
+  <xacro:cylinder_link name="left_front_wheel"
+                       length="${wheel_length}" radius="${wheel_radius}"
+                       mass="${wheel_mass}" inertia="${wheel_inertia}"
+                       color="0.1 0.1 0.1 1" rpy="1.57 0 0"/>
+  <xacro:wheel_joint name="left_front_wheel_joint" parent="base_link" child="left_front_wheel" xyz="0.48 0.41 -0.18"/>
+
+  <xacro:cylinder_link name="right_front_wheel"
+                       length="${wheel_length}" radius="${wheel_radius}"
+                       mass="${wheel_mass}" inertia="${wheel_inertia}"
+                       color="0.1 0.1 0.1 1" rpy="1.57 0 0"/>
+  <xacro:wheel_joint name="right_front_wheel_joint" parent="base_link" child="right_front_wheel" xyz="0.48 -0.41 -0.18"/>
+
+  <xacro:cylinder_link name="left_rear_wheel"
+                       length="${wheel_length}" radius="${wheel_radius}"
+                       mass="${wheel_mass}" inertia="${wheel_inertia}"
+                       color="0.1 0.1 0.1 1" rpy="1.57 0 0"/>
+  <xacro:wheel_joint name="left_rear_wheel_joint" parent="base_link" child="left_rear_wheel" xyz="-0.48 0.41 -0.18"/>
+
+  <xacro:cylinder_link name="right_rear_wheel"
+                       length="${wheel_length}" radius="${wheel_radius}"
+                       mass="${wheel_mass}" inertia="${wheel_inertia}"
+                       color="0.1 0.1 0.1 1" rpy="1.57 0 0"/>
+  <xacro:wheel_joint name="right_rear_wheel_joint" parent="base_link" child="right_rear_wheel" xyz="-0.48 -0.41 -0.18"/>
+
+  <!-- Headlights -->
+  <xacro:cylinder_link name="left_headlight"
+                       length="${headlight_length}" radius="${headlight_radius}"
+                       mass="${headlight_mass}" inertia="${headlight_inertia}"
+                       color="1.0 1.0 0.3 1" rpy="0 1.57 0"/>
+  <xacro:fixed_joint name="left_headlight_joint" parent="base_link" child="left_headlight" xyz="0.82 0.22 0.08" rpy="0 0 0"/>
+
+  <xacro:cylinder_link name="right_headlight"
+                       length="${headlight_length}" radius="${headlight_radius}"
+                       mass="${headlight_mass}" inertia="${headlight_inertia}"
+                       color="1.0 1.0 0.3 1" rpy="0 1.57 0"/>
+  <xacro:fixed_joint name="right_headlight_joint" parent="base_link" child="right_headlight" xyz="0.82 -0.22 0.08" rpy="0 0 0"/>
+
+  <!-- Taillights -->
+  <xacro:box_link name="left_taillight"
+                  size="${taillight_size}"
+                  mass="${taillight_mass}"
+                  ixx="${taillight_inertia}" iyy="${taillight_inertia}" izz="${taillight_inertia}"
+                  color="1.0 0.0 0.0 1"/>
+  <xacro:fixed_joint name="left_taillight_joint" parent="base_link" child="left_taillight" xyz="-0.82 0.26 0.12" rpy="0 0 0"/>
+
+  <xacro:box_link name="right_taillight"
+                  size="${taillight_size}"
+                  mass="${taillight_mass}"
+                  ixx="${taillight_inertia}" iyy="${taillight_inertia}" izz="${taillight_inertia}"
+                  color="1.0 0.0 0.0 1"/>
+  <xacro:fixed_joint name="right_taillight_joint" parent="base_link" child="right_taillight" xyz="-0.82 -0.26 0.12" rpy="0 0 0"/>
+
+</robot>
