@@ -1,0 +1,5 @@
+colcon build --packages-select robot
+source install/setup.bash
+ros2 launch robot gazebo_rviz.launch.py
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
