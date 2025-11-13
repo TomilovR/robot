@@ -1,0 +1,3 @@
+colcon build --packages-select robot
+source install/setup.bash
+ros2 launch robot display.launch.py model:=zhigulix_gen.urdf
