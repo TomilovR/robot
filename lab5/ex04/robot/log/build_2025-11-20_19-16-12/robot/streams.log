@@ -1,0 +1,36 @@
+[0.655s] Invoking command in '/home/roman/ros2_ws/src/robot': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/roman/ros2_ws/src/robot/build/robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/roman/ros2_ws/src/robot/install/robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/robot build --build-base /home/roman/ros2_ws/src/robot/build/robot/build install --record /home/roman/ros2_ws/src/robot/build/robot/install.log --single-version-externally-managed install_data
+[0.926s] running egg_info
+[0.947s] creating build/robot/robot.egg-info
+[0.947s] writing build/robot/robot.egg-info/PKG-INFO
+[0.947s] writing dependency_links to build/robot/robot.egg-info/dependency_links.txt
+[0.947s] writing entry points to build/robot/robot.egg-info/entry_points.txt
+[0.947s] writing requirements to build/robot/robot.egg-info/requires.txt
+[0.947s] writing top-level names to build/robot/robot.egg-info/top_level.txt
+[0.947s] writing manifest file 'build/robot/robot.egg-info/SOURCES.txt'
+[0.989s] reading manifest file 'build/robot/robot.egg-info/SOURCES.txt'
+[0.989s] writing manifest file 'build/robot/robot.egg-info/SOURCES.txt'
+[0.990s] running build
+[0.990s] running build_py
+[0.990s] creating /home/roman/ros2_ws/src/robot/build/robot/build/lib/robot
+[0.990s] copying robot/circle_movement.py -> /home/roman/ros2_ws/src/robot/build/robot/build/lib/robot
+[0.990s] copying robot/__init__.py -> /home/roman/ros2_ws/src/robot/build/robot/build/lib/robot
+[0.990s] running install
+[0.993s] running install_lib
+[1.014s] creating /home/roman/ros2_ws/src/robot/install/robot/lib/python3.12/site-packages/robot
+[1.014s] copying /home/roman/ros2_ws/src/robot/build/robot/build/lib/robot/circle_movement.py -> /home/roman/ros2_ws/src/robot/install/robot/lib/python3.12/site-packages/robot
+[1.014s] copying /home/roman/ros2_ws/src/robot/build/robot/build/lib/robot/__init__.py -> /home/roman/ros2_ws/src/robot/install/robot/lib/python3.12/site-packages/robot
+[1.014s] byte-compiling /home/roman/ros2_ws/src/robot/install/robot/lib/python3.12/site-packages/robot/circle_movement.py to circle_movement.cpython-312.pyc
+[1.015s] byte-compiling /home/roman/ros2_ws/src/robot/install/robot/lib/python3.12/site-packages/robot/__init__.py to __init__.cpython-312.pyc
+[1.015s] running install_data
+[1.015s] creating /home/roman/ros2_ws/src/robot/install/robot/share/ament_index/resource_index/packages
+[1.015s] copying resource/robot -> /home/roman/ros2_ws/src/robot/install/robot/share/ament_index/resource_index/packages
+[1.015s] copying package.xml -> /home/roman/ros2_ws/src/robot/install/robot/share/robot
+[1.015s] copying circle_movement.launch.py -> /home/roman/ros2_ws/src/robot/install/robot/share/robot
+[1.015s] copying zhiguli_gazebo.urdf -> /home/roman/ros2_ws/src/robot/install/robot/share/robot
+[1.015s] copying urdf.rviz -> /home/roman/ros2_ws/src/robot/install/robot/share/robot
+[1.015s] running install_egg_info
+[1.037s] Copying build/robot/robot.egg-info to /home/roman/ros2_ws/src/robot/install/robot/lib/python3.12/site-packages/robot-0.0.0-py3.12.egg-info
+[1.037s] running install_scripts
+[1.141s] Installing circle_movement script to /home/roman/ros2_ws/src/robot/install/robot/lib/robot
+[1.142s] writing list of installed files to '/home/roman/ros2_ws/src/robot/build/robot/install.log'
+[1.161s] Invoked command in '/home/roman/ros2_ws/src/robot' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/roman/ros2_ws/src/robot/build/robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/roman/ros2_ws/src/robot/install/robot/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/robot build --build-base /home/roman/ros2_ws/src/robot/build/robot/build install --record /home/roman/ros2_ws/src/robot/build/robot/install.log --single-version-externally-managed install_data

@@ -1,0 +1,597 @@
+<?xml version="1.0"?>
+<robot name="zhiguli">
+  
+  <!-- Base Link (lower chassis) -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1.6 0.7 0.2"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1.6 0.7 0.2"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="30.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="5.0" ixy="0.0" ixz="0.0" iyy="15.0" iyz="0.0" izz="18.0"/>
+    </inertial>
+  </link>
+
+  <!-- Hood -->
+  <link name="hood">
+    <visual>
+      <geometry>
+        <box size="0.5 0.65 0.25"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.5 0.65 0.25"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="5.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.5" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.2"/>
+    </inertial>
+  </link>
+
+  <joint name="hood_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="hood"/>
+    <origin xyz="0.6 0 0.22" rpy="0 -0.1 0"/>
+  </joint>
+
+  <!-- Cabin -->
+  <link name="cabin">
+    <visual>
+      <geometry>
+        <box size="0.7 0.65 0.5"/>
+      </geometry>
+      <material name="light_blue">
+        <color rgba="0.7 0.8 0.9 0.6"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.65 0.5"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="8.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.5" iyz="0" izz="2.0"/>
+    </inertial>
+  </link>
+
+  <joint name="cabin_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cabin"/>
+    <origin xyz="0.1 0 0.45" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Roof -->
+  <link name="roof">
+    <visual>
+      <geometry>
+        <box size="0.65 0.6 0.05"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.65 0.6 0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="3.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.2" ixy="0" ixz="0" iyy="0.5" iyz="0" izz="0.6"/>
+    </inertial>
+  </link>
+
+  <joint name="roof_joint" type="fixed">
+    <parent link="cabin"/>
+    <child link="roof"/>
+    <origin xyz="0 0 0.27" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Trunk -->
+  <link name="trunk">
+    <visual>
+      <geometry>
+        <box size="0.4 0.65 0.3"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.4 0.65 0.3"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="5.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.5" ixy="0" ixz="0" iyy="0.8" iyz="0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <joint name="trunk_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="trunk"/>
+    <origin xyz="-0.6 0 0.25" rpy="0 0.05 0"/>
+  </joint>
+
+  <!-- Front Bumper -->
+  <link name="front_bumper">
+    <visual>
+      <geometry>
+        <box size="0.1 0.7 0.12"/>
+      </geometry>
+      <material name="chrome">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.7 0.12"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="3.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.2" iyz="0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <joint name="front_bumper_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_bumper"/>
+    <origin xyz="0.85 0 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Rear Bumper -->
+  <link name="rear_bumper">
+    <visual>
+      <geometry>
+        <box size="0.1 0.7 0.12"/>
+      </geometry>
+      <material name="chrome">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.7 0.12"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="3.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.2" iyz="0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <joint name="rear_bumper_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rear_bumper"/>
+    <origin xyz="-0.85 0 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Left Front Wheel -->
+  <link name="left_front_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.12" radius="0.18"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.12" radius="0.18"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/>
+    </inertial>
+  </link>
+
+  <joint name="left_front_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_front_wheel"/>
+    <origin xyz="0.48 0.41 -0.18" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <!-- Right Front Wheel -->
+  <link name="right_front_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.12" radius="0.18"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.12" radius="0.18"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/>
+    </inertial>
+  </link>
+
+  <joint name="right_front_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_front_wheel"/>
+    <origin xyz="0.48 -0.41 -0.18" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <!-- Left Rear Wheel -->
+  <link name="left_rear_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.12" radius="0.18"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.12" radius="0.18"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/>
+    </inertial>
+  </link>
+
+  <joint name="left_rear_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_rear_wheel"/>
+    <origin xyz="-0.48 0.41 -0.18" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.05" friction="0.05"/>
+  </joint>
+
+  <!-- Right Rear Wheel -->
+  <link name="right_rear_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.12" radius="0.18"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.12" radius="0.18"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.0</mu>
+            <mu2>1.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/>
+    </inertial>
+  </link>
+
+  <joint name="right_rear_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_rear_wheel"/>
+    <origin xyz="-0.48 -0.41 -0.18" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.05" friction="0.05"/>
+  </joint>
+
+  <!-- Front Lights -->
+  <link name="left_headlight">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.06"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <material name="yellow">
+        <color rgba="1.0 1.0 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.05" radius="0.06"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="left_headlight_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_headlight"/>
+    <origin xyz="0.82 0.22 0.08" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_headlight">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.06"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <material name="yellow">
+        <color rgba="1.0 1.0 0.3 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.05" radius="0.06"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="right_headlight_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_headlight"/>
+    <origin xyz="0.82 -0.22 0.08" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Rear Lights -->
+  <link name="left_taillight">
+    <visual>
+      <geometry>
+        <box size="0.03 0.1 0.08"/>
+      </geometry>
+      <material name="red_light">
+        <color rgba="1.0 0.0 0.0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.1 0.08"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.3"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="left_taillight_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_taillight"/>
+    <origin xyz="-0.82 0.26 0.12" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_taillight">
+    <visual>
+      <geometry>
+        <box size="0.03 0.1 0.08"/>
+      </geometry>
+      <material name="red_light">
+        <color rgba="1.0 0.0 0.0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.1 0.08"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.3"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="right_taillight_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_taillight"/>
+    <origin xyz="-0.82 -0.26 0.12" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Gazebo Plugins -->
+  
+  <!-- Differential Drive Plugin for Gazebo Harmonic -->
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>left_rear_wheel_joint</left_joint>
+      <right_joint>right_rear_wheel_joint</right_joint>
+      <wheel_separation>0.82</wheel_separation>
+      <wheel_radius>0.18</wheel_radius>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <topic>cmd_vel</topic>
+      <odom_topic>odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+      <max_linear_acceleration>1.0</max_linear_acceleration>
+      <min_linear_acceleration>-1.0</min_linear_acceleration>
+      <max_angular_acceleration>2.0</max_angular_acceleration>
+      <min_angular_acceleration>-2.0</min_angular_acceleration>
+      <max_linear_velocity>2.0</max_linear_velocity>
+      <min_linear_velocity>-2.0</min_linear_velocity>
+      <max_angular_velocity>1.5</max_angular_velocity>
+      <min_angular_velocity>-1.5</min_angular_velocity>
+      <tf_topic>/tf</tf_topic>
+    </plugin>
+  </gazebo>
+
+  <!-- Joint State Publisher Plugin -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <joint_name>left_front_wheel_joint</joint_name>
+      <joint_name>right_front_wheel_joint</joint_name>
+      <joint_name>left_rear_wheel_joint</joint_name>
+      <joint_name>right_rear_wheel_joint</joint_name>
+    </plugin>
+  </gazebo>
+
+  <!-- Pose Publisher Plugin -->
+  <gazebo>
+    <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose>
+      <publish_sensor_pose>true</publish_sensor_pose>
+      <publish_collision_pose>false</publish_collision_pose>
+      <publish_visual_pose>false</publish_visual_pose>
+      <publish_nested_model_pose>true</publish_nested_model_pose>
+      <update_frequency>50</update_frequency>
+    </plugin>
+  </gazebo>
+
+  <!-- Gazebo material properties -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="hood">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="cabin">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="roof">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="trunk">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="front_bumper">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="rear_bumper">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="left_front_wheel">
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="right_front_wheel">
+    <material>Gazebo/Black</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="left_rear_wheel">
+    <material>Gazebo/Black</material>
+    <mu1>1.5</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="right_rear_wheel">
+    <material>Gazebo/Black</material>
+    <mu1>1.5</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="left_headlight">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <gazebo reference="right_headlight">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <gazebo reference="left_taillight">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="right_taillight">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+</robot>
